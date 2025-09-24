@@ -44,14 +44,26 @@ struct ContentView: View {
                     
                     Spacer()
                     
+//                    NavigationLink(
+//                        destination: MomentCashbackService.launchCashbackUI(onFinish: {
+//                            print("Cashback UI is dismissed.")
+//                            isNavigating = false
+//                        })
+//                            .edgesIgnoringSafeArea(.bottom)
+//                            .navigationBarTitle("", displayMode: .inline)
+//                            .navigationBarBackButtonHidden(true),
+//                        isActive: $isNavigating
+//                    ) {
+//                        EmptyView()
+//                    }
+                    // Navigate to Cashback UI
                     NavigationLink(
-                        destination: MomentCashbackService.launchCashbackUI(onFinish: {
-                            print("Cashback UI is dismissed.")
+                        destination: CashbackUI(onFinish: {
                             isNavigating = false
                         })
-                            .edgesIgnoringSafeArea(.bottom)
-                            .navigationBarTitle("", displayMode: .inline)
-                            .navigationBarBackButtonHidden(true),
+                        .edgesIgnoringSafeArea(.bottom)
+                        .navigationBarTitle("", displayMode: .inline)
+                        .navigationBarBackButtonHidden(true),
                         isActive: $isNavigating
                     ) {
                         EmptyView()
